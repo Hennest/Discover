@@ -86,6 +86,17 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->isLocal() && class_exists(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class)) {
             $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
+        
+
+        $loader->alias(
+            'Dcat\Admin\Grid\Displayers\DialogTree',
+            'App\Traits\ModifiedDialogTree'
+        );
+
+        $loader->alias(
+            'Dcat\Admin\Grid',
+            'App\Traits\ModifiedGrid'
+        );
     }
 
     /**

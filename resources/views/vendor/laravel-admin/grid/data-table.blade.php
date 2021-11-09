@@ -7,7 +7,7 @@
 
     {!! $grid->renderHeader() !!}
 
-    <div class="table-responsive table-wrapper {{ $grid->option('table_collapse') ? 'table-collapse' : '' }}">
+    <div class="table-responsive table-wrapper {{ $grid->option('table_collapse') ? 'table-collapse' : '' }}" style="overflow: scroll">
             <table class="custom-data-table dataTable {{ $grid->formatTableClass() }}" id="{{ $tableId }}">
                 <thead>
                 @if ($headers = $grid->getComplexHeaders())

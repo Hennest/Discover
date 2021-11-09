@@ -47,12 +47,25 @@ HTML;
         $showBtn = $this->row('review_status') === BaseModel::REVIEW_STATUS_OK ? 'no' : 'yes';
         $lable   = admin_trans_label();
         return <<<JS
+
+        var wiframe = window;
+
+        if (top && wiframe.layer) {
+            wiframe = top;
+        }
         $("#{$this->id()}").on("click",function(){
             var show_btn = '{$showBtn}';
             var option = {
                 title:'$lable',
                 type: 2,
-                area: ['65%', '80%'], //宽高
+                area: (function (v) {
+                    // 屏幕小于800则最大化展示
+                    if (wiframe.screen.width <= 800) {
+                        return ['100%', '100%',];
+                    }
+
+                    return v;
+                })(['65%', '80%']), //宽高
                 content:["{$this->action()}"],
                 scrollbar:false,
                 // maxmin:true,
@@ -89,7 +102,7 @@ HTML;
                 };
             }
             layer.open(option)
-                
+
         })
 JS;
     }

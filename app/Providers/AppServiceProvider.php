@@ -69,6 +69,7 @@ use App\Observers\StatementItemObserver;
 use App\Observers\StatementOrderObserver;
 use App\Observers\StockHistoryObserver;
 use App\Observers\TaskObserver;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -86,7 +87,9 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->isLocal() && class_exists(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class)) {
             $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
-        
+
+
+     /*   $loader = AliasLoader::getInstance();
 
         $loader->alias(
             'Dcat\Admin\Grid\Displayers\DialogTree',
@@ -96,7 +99,7 @@ class AppServiceProvider extends ServiceProvider
         $loader->alias(
             'Dcat\Admin\Grid',
             'App\Traits\ModifiedGrid'
-        );
+        );*/
     }
 
     /**

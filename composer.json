@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ext-bcmath": "*",
         "dcat/easy-excel": "^1.0",
         "dcat/laravel-admin": "^1.7",
         "dcat/laravel-wherehasin": "^0.3.0",
@@ -23,8 +24,7 @@
         "propaganistas/laravel-phone": "^4.2",
         "spatie/laravel-enum": "1.6.0",
         "yxx/laravel-quick": "^1.0",
-        "zgldh/qiniu-laravel-storage": "^0.10.3",
-        "ext-bcmath": "*"
+        "zgldh/qiniu-laravel-storage": "^0.10.3"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",

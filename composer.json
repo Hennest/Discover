@@ -16,6 +16,7 @@
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
+        "funkjedi/composer-include-files": "^1.1",
         "guzzlehttp/guzzle": "^6.3",
         "itsgoingd/clockwork": "^5.1",
         "laravel/framework": "^7.24",
@@ -44,7 +45,10 @@
     "extra": {
         "laravel": {
             "dont-discover": []
-        }
+        },
+        "include_files": [
+            "app/Helpers/helpers.php"
+        ]
     },
     "autoload": {
         "psr-4": {

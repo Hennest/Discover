@@ -26,7 +26,7 @@ class AddCompanyNameIntoCostOrderTable extends Migration
     public function up()
     {
         Schema::table('cost_order', function (Blueprint $table) {
-            $table->string('company_name');
+            $table->string('company_name')->nullable();
             $table->unsignedInteger('company_id')->default(0);
             $table->dropColumn('category_user');
         });

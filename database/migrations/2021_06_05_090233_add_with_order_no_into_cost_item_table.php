@@ -26,7 +26,7 @@ class AddWithOrderNoIntoCostItemTable extends Migration
     public function up()
     {
         Schema::table('cost_item', function (Blueprint $table) {
-            $table->string('with_order_no');
+            $table->string('with_order_no')->nullable();
         });
     }
 
